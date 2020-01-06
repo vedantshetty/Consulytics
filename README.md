@@ -22,3 +22,62 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+/*
+Rails Consulting
+-App for booking meeting. Provides a portal for a consultant to schedule meetings. You can have clients come on to the site and schedule a session and pay for it. 
+
+The client can see all their upcoming meetings and sessions and the admin(freelancer) can manage users, cancel meetings and other overall edits to the site
+
+
+
+Uses mailers, uses stripe API implementation for payments, using a calender gem
+Uses tailwind template by Andy Leverenz --> https://github.com/justalever/kickoff_tailwind
+-automatically does a lot of setup work for us
+
+Devise gem for authentication
+redis to run sidekiq in the background and send out emails 
+
+Thanks
+Undraw for illustrations
+Jlever for guide
+
+
+To-Do
+- Add drag and drop to add files in meeting-show
+- Creating a date picker with time picker
+- Add option to display all meetings when logged in as admin
+
+
+
+Layout
+
+Sign-up page *Screenshot*
+- Lets the users sign-up
+- Lets users sign-in
+
+Dashboard *Screenshot*
+First thing the users see when they sign in. Display all the meetings they have schedules
+-*screenshot* also has a list view of all the meetings
+
+Meeting Show *screentshot*
+-Each meeting has a show page, which displays the start and end times for the meeting. We use the gem trix by basecamp to generate the text editor for adding details/comments to the meetings.
+
+*screenshot updating comments in real time*
+- We also use AJAX to update the comments in real time. When users submit a comment it is automatically displayed without having to refresh the page.
+
+
+Schedule a new consulting session *screenshot*
+- Form with meeting name, start time, end time, stripe payment options
+- Also remembers the users last entered payment options 
+- Submitting the form sends a confirmation email to the users *Mailer*
+
+
+
+
+CODE
+make sure you have redis installed
+gem install foreman
+bundle install
+foreman start
+*/
