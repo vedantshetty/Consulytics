@@ -1,15 +1,18 @@
 class MeetingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
 
   # GET /meetings
   # GET /meetings.json
   def index
-    @meetings = Meeting.all
+    # Add an option to display all meetings when logged in as admin meetings.all
+    @meetings = current_user.meetings.all
   end
 
   # GET /meetings/1
   # GET /meetings/1.json
   def show
+    
   end
 
   # GET /meetings/new
@@ -25,7 +28,7 @@ class MeetingsController < ApplicationController
   # POST /meetings.json
   def create
     @meeting = Meeting.new(meeting_params)
-
+    @meeting.user_id = current_user.id
     respond_to do |format|
       if @meeting.save
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
