@@ -1,0 +1,5 @@
+<div class = 'max-w-md my-10 m-auto p-12 lg:p-16 bg-white rounded border border-gray-400 text-center shadow'>
+  <%= image_tag 'empty_schedule.svg', alt: 'schedule', width: 300, class: 'mb-4' %>
+  <h1 class= 'text-indigo-700 text-2xl mb-6'> It looks like you haven't scheduled a consultation yet </h1>
+  <%= link_to 'Schedule a new consultation', new_meeting_path, class: 'btn btn-primary py-3 px-5' %>
+</div>
