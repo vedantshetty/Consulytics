@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 #checks if the current user is the creater of a post
   def author_of(record)
-    user_signed_in? && current_users.id == record.user_id
+    user_signed_in? && current_user.id == record.user_id
   end
 
   def admin?
