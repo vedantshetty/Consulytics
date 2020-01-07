@@ -1,5 +1,5 @@
 <nav class ='bg-white mb-4 shadow rounded'>
-  <ul id ="nav-tab" class= "tab list-reset flex">
+  <ul id ="nav-tab" class= "tabs list-reset flex">
     <li class= "active" data-tab="calendar">
       <%= link_to "#calendar", class: 'tab flex items-center' do %>
         <svg viewBox="0 0 20 20" width="16" height="16" class="fill-current text-gray-400 mr-2">
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <% link_to "Cancel Meeting", meeting, method: :delete, data: {confirm: "Are you sure? There are no refunds."},
+      <%= link_to "Cancel Meeting", meeting, method: :delete, data: {confirm: "Are you sure? There are no refunds."},
       class: "btn btn-destroy ml-4" if admin? %>
     <% end %>
   </div>
