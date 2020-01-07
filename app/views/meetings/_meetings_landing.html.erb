@@ -11,7 +11,7 @@
     </li>
     <li data-tab = 'all-meetings'>
       <%= link_to '#all-meetings', class:'tab flex items-center' do %>
-        <svg viewBox="0 0 20 20" class="fill-current text-grey-400 mr-2" width="16" height="16">
+        <svg viewBox="0 0 20 20" class="fill-current text-gray-400 mr-2" width="16" height="16">
           <title>coffee</title>
           <path d="M4 11H2a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h2V1h14v10a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zm0-2V5H2v4h2zm-2 8v-1h18v1l-4 2H6l-4-2z"></path>
         </svg>
@@ -26,8 +26,8 @@
     <h1> Meetings</h1>
 
     <% meetings.each do |meeting| %>
-      <div class="flex flex-wrap items-center justify-start p-4 border-b border-grey-400 mb-6">
-        <div class='flex-1 glex justify-between'>
+      <div class="flex flex-wrap items-center justify-start p-4 border-b border-gray-400 mb-6">
+        <div class='flex-1 flex justify-between'>
           <div>
             <%= link_to meeting.name, meeting, class: "link mr-4" %>
           </div>

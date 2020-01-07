@@ -11,7 +11,7 @@
     <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
-          <th class= 'text-sm text-grey-800'><%= t('date.abbr_day_names')[day.wday] %></th>
+          <th class= 'text-sm text-gray-800'><%= t('date.abbr_day_names')[day.wday] %></th>
         <% end %>
       </tr>
     </thead>
@@ -21,7 +21,7 @@
         <tr>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-                <span class='text-sm text-grey-700'><% block.call day.strftime("%d"), sorted_events.fetch(day, []) %></span>
+                <span class='text-sm text-gray-700'><% block.call day.strftime("%d"), sorted_events.fetch(day, []) %></span>
             <% end %>
           <% end %>
         </tr>
