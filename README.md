@@ -47,6 +47,7 @@ To-Do
 - Add drag and drop to add files in meeting-show
 - Creating a date picker with time picker
 - Add option to display all meetings when logged in as admin
+- Refactor tailwind code for 1.0
 
 
 
