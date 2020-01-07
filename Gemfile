@@ -59,7 +59,7 @@ gem 'sidekiq', '~> 6.0', '>= 6.0.1'
 
 
 
-# Consultlytics Specific
+# Consulytics Specific
 gem 'simple_calendar', '~> 2.3'
 gem 'trix', '~> 0.9.9'
 gem 'stripe', '~>4.0', '>=4.0.2'
