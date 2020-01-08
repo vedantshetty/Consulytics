@@ -81,4 +81,19 @@ make sure you have redis installed
 gem install foreman
 bundle install
 foreman start
-*/
+
+
+Setup stripe payments
+go to dashboard.stripe.com and create an account if you don't already have one.
+
+Click on the developer option and get your secret key.Link to article
+
+open your credentials file. Link to how to open credfile in rails--> https://www.viget.com/articles/storing-secret-credentials-in-rails-5-2-and-up/
+
+
+EDITOR="<code> --wait" bin/rails credentials:edit
+
+
+paste the secret key and publishable key as
+stripe_publishable_key: fff
+stripe_secret_key: ggg
