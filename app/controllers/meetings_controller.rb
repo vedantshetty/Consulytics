@@ -2,10 +2,8 @@ class MeetingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
   before_action :must_be_admin, only: [:active_sessions]
-  # GET /meetings
-  # GET /meetings.json
+
   def index
-    # Add an option to display all meetings when logged in as admin meetings.all
   if current_user.admin?
     @meetings = Meeting.all
 
@@ -14,23 +12,17 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # GET /meetings/1
-  # GET /meetings/1.json
   def show
     @comment = Comment.new
   end
 
-  # GET /meetings/new
   def new
     @meeting = Meeting.new
   end
 
-  # GET /meetings/1/edit
   def edit
   end
 
-  # POST /meetings
-  # POST /meetings.json
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.user_id = current_user.id
@@ -60,6 +52,7 @@ class MeetingsController < ApplicationController
       if @meeting.save
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
         format.json { render :show, status: :created, location: @meeting }
+        MeetingMailer.with(meeting: @meeting, user: current_user).meeting_scheduled.deliver_later
       else
         format.html { render :new }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }
@@ -71,8 +64,6 @@ class MeetingsController < ApplicationController
       render action: :new
   end
 
-  # PATCH/PUT /meetings/1
-  # PATCH/PUT /meetings/1.json
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
@@ -85,8 +76,6 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # DELETE /meetings/1
-  # DELETE /meetings/1.json
   def destroy
     @meeting.destroy
     respond_to do |format|
@@ -100,12 +89,10 @@ class MeetingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_meeting
       @meeting = Meeting.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
       params.require(:meeting).permit(:name, :start_time, :end_time, :user_id)
     end
