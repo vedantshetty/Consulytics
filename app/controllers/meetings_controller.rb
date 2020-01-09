@@ -1,12 +1,17 @@
 class MeetingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
-
+  before_action :must_be_admin, only: [:active_sessions]
   # GET /meetings
   # GET /meetings.json
   def index
     # Add an option to display all meetings when logged in as admin meetings.all
-    @meetings = current_user.meetings.all
+  if current_user.admin?
+    @meetings = Meeting.all
+
+  else
+      @meetings = current_user.meetings.all
+    end
   end
 
   # GET /meetings/1
@@ -90,6 +95,10 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def active_sessions
+    @active_sessions = Meeting.where('end_time>?',Time.now)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
@@ -99,5 +108,11 @@ class MeetingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
       params.require(:meeting).permit(:name, :start_time, :end_time, :user_id)
+    end
+
+    def must_be_admin
+      unless current_user.admin?
+        redirect_to meetings_path,alert: "You don't have access to this page"
+      end
     end
 end
