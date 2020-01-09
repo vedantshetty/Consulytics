@@ -4,6 +4,16 @@
 
 App for freelancers and consultants streamline consultation sessions. Consulytics provides a portal for your clients to schedule and pay for consultation sessions
 
+## Table of Contents
+- [Features](#features)
+- [Layout](#layout)
+- [Setup/Installation](#setup)
+- [Gems](#gems)
+- [To-Do](#to-do)
+- [Thanks](#thanks)
+- [License](#license)
+
+
 ## Features
 
  - See all your upcoming sessions in a simple calender or list view
@@ -22,25 +32,41 @@ App for freelancers and consultants streamline consultation sessions. Consulytic
 ### Dashboard
 ![Regular Dashboard](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Regular_Dashboard.png)
 
- - The first thing the users sees when they log-in
+ - The calender dashboard is the first thing the users sees when they log-in
+ 
+ #### Admin Dashboard
  - The calender only shows appointments relevant to the user but the admin can see all the meetings
 ![Admin Dashboard](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Admin_dashboard.png)
 
 
-*List View*
-By selecting the tab at the top you can also choose to view the meetings in a list view
+#### List View
+- By selecting the tab at the top you can also choose to view the meetings in a list view
 ![Meeting In List View](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Meeting_List_View.png)
 
-Meeting Show *screentshot*
--Each meeting has a show page, which displays the start and end times for the meeting. We use the gem trix by basecamp to generate the text editor for adding details/comments to the meetings.
+### See an Individual Meeting 
+- Each meeting has a show page which displays the start times and end times for the meeting. 
+- You can also write some of your thoughts and notes for the meeting here. We use the trix gem to generate a text editor for adding details to the meetings
+- The admin also has the ability to cancel the meeting session through this page
+![Meeting In List View](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Meeting_List_View.png)
 
-- We also use AJAX to update the comments in real time. When users submit a comment it is automatically displayed without having to refresh the page.
+- The meeting show page uses AJAX to update the comments in real time. When users submit a comment it is automatically displayed without having to refresh the page.
+![Dynamic Meeting Update](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/AJAX%20Comments.gif)
 
 
-Schedule a new consulting session *screenshot*
-- Form with meeting name, start time, end time, stripe payment options
-- Also remembers the users last entered payment options 
-- Submitting the form sends a confirmation email to the users *Mailer*
+
+### Scheduling A New Consultation Session
+
+![New Consulation Form](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/New_Session.png)
+- Client's can schedule a new meeting right from within the app
+- Creating a new meeting also sends an email to the client about the meeting they just scheduled at their registered email ID
+![New Consulation Email](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/New_Session_Mail.png)
+
+
+
+### Client/User list
+- In addition to the above features the admin can view all his clients along with the upcoming sessions with them on a single page
+- The admin can also delete/fire a particular client thus cancelling all sessions with them
+![Users List](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/User_List.png)
 
 ## Setup
 
