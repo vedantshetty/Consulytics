@@ -48,6 +48,9 @@ To-Do
 - Creating a date picker with time picker
 - Add option to display all meetings when logged in as admin
 - Refactor tailwind code for 1.0
+-Integrate SendGrid
+-Refactor UI
+-Improve text on home page
 
 
 
