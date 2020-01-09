@@ -1,73 +1,39 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-/*
-Rails Consulting
--App for booking meeting. Provides a portal for a consultant to schedule meetings. You can have clients come on to the site and schedule a session and pay for it. 
-
-The client can see all their upcoming meetings and sessions and the admin(freelancer) can manage users, cancel meetings and other overall edits to the site
 
 
+# Consulytics
 
-Uses mailers, uses stripe API implementation for payments, using a calender gem
-Uses tailwind template by Andy Leverenz --> https://github.com/justalever/kickoff_tailwind
--automatically does a lot of setup work for us
+App for freelancers and consultants streamline consultation sessions. Consulytics provides a portal for your clients to schedule and pay for consultation sessions
 
-Devise gem for authentication
-redis to run sidekiq in the background and send out emails 
+## Features
 
-Thanks
-Undraw for illustrations
-Jlever for guide
+ - See all your upcoming sessions in a simple calender or list view
+ - Clients can log-in to keep track of all their upcomming consultations
+ - Add comments and meeting notes to keep track of the important stuff
+ - Stripe integration allows clients to pay for the meeting directly inside the app itself
+ - Send a confirmation and reminder emails to the client just before the meeting
+
+## Layout
+### Sign-up Page
+
+![Login/Signup Page](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Login_SignUp.png)
+- Lets the users Sign-Up/ Sign-In
+- Users need to be logged in to be able to schedule meetings
+
+### Dashboard
+![Regular Dashboard](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Regular_Dashboard.png)
+
+ - The first thing the users sees when they log-in
+ - The calender only shows appointments relevant to the user but the admin can see all the meetings
+![Admin Dashboard](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Admin_dashboard.png)
 
 
-To-Do
-- Add drag and drop to add files in meeting-show
-- Creating a date picker with time picker
-- Add option to display all meetings when logged in as admin
-- Refactor tailwind code for 1.0
--Integrate SendGrid
--Refactor UI
--Improve text on home page
-
-
-
-Layout
-
-Sign-up page *Screenshot*
-- Lets the users sign-up
-- Lets users sign-in
-
-Dashboard *Screenshot*
-First thing the users see when they sign in. Display all the meetings they have schedules
--*screenshot* also has a list view of all the meetings
+*List View*
+By selecting the tab at the top you can also choose to view the meetings in a list view
+![Meeting In List View](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Meeting_List_View.png)
 
 Meeting Show *screentshot*
 -Each meeting has a show page, which displays the start and end times for the meeting. We use the gem trix by basecamp to generate the text editor for adding details/comments to the meetings.
 
-*screenshot updating comments in real time*
 - We also use AJAX to update the comments in real time. When users submit a comment it is automatically displayed without having to refresh the page.
 
 
@@ -76,27 +42,54 @@ Schedule a new consulting session *screenshot*
 - Also remembers the users last entered payment options 
 - Submitting the form sends a confirmation email to the users *Mailer*
 
+## Setup
+
+1. cd to the directory you want to save the code
+2. run `git clone git@github.com:vedantshetty/Consulytics.git`
+3. cd to the project directory
+4. Make sure you have redis install
+  - run `redis-server` in the terminal
+  - If you don't have redis install then do so by using the [guide](http://tutorials.jumpstartlab.com/topics/performance/installing_redis.html)
+5. run `gem install foreman`
+  - Make sure to not install foreman from the gem file
+6. `bundle install`
+7. Setup Stripe Payments
+  - Get your public and secret key from stripe( [link to keys](https://dashboard.stripe.com/test/apikeys))
+  - Open the credentials file by typing
+
+| Value In Code | Text Editor  |
+|---------------|--------------|
+| EDITOR='subl --wait' bin/rails credentials:edit        | Sublime Text |
+| EDITOR='code --wait' bin/rails credentials:edit          | VSCode       |
+| EDITOR='gedit --wait' bin/rails credentials:edit         | Gedit        |
+
+8 Paste the following in your credentials file
+  - stripe_publishable_key: <YOUR_KEY_HERE>
+  - stripe_secret_key: < YOUR_KEY_HERE>
+
+9. `foreman start`
+
+## Gems
+
+ 1. [Simple Calender](https://github.com/excid3/simple_calendar)
+ 2. [Stripe API](https://github.com/stripe/stripe-ruby)
+ 3. TO-DO: [SendGrid](https://sendgrid.com/docs/for-developers/sending-email/rubyonrails/)
+ 4. [Tailwind CSS](https://tailwindcss.com/)
+ 5. [Tailwind Template](https://github.com/justalever/kickoff_tailwind) by [Andy Leverenz](https://www.linkedin.com/in/aleverenz/)
+ 6. [Redis](https://github.com/redis/redis-rb)
+ 7. [Sidekiq](https://github.com/mperham/sidekiq)
+ 8. [Trix](https://github.com/basecamp/trix) by Basecamp
+ 
+ ## To-Do
+ - Allow 'drag-dropping' files to meeting notes
+- Use a more intuitive date-time picker
+- Refactor CSS for tailwindCSS 1.0
+-Integrate SendGrid
+-Refactor UI
+-Improve text on home page
 
 
+## Thanks
 
-CODE
-make sure you have redis installed
-gem install foreman
-bundle install
-foreman start
-
-
-Setup stripe payments
-go to dashboard.stripe.com and create an account if you don't already have one.
-
-Click on the developer option and get your secret key.Link to article
-
-open your credentials file. Link to how to open credfile in rails--> https://www.viget.com/articles/storing-secret-credentials-in-rails-5-2-and-up/
-
-
-EDITOR="<code> --wait" bin/rails credentials:edit
-
-
-paste the secret key and publishable key as
-stripe_publishable_key: fff
-stripe_secret_key: ggg
+ 1. [Undraw](https://undraw.co/) for illustrations
+ 2. [Jlever](https://github.com/justalever) for guide
