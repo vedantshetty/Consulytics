@@ -47,7 +47,7 @@ App for freelancers and consultants streamline consultation sessions. Consulytic
 - Each meeting has a show page which displays the start times and end times for the meeting. 
 - You can also write some of your thoughts and notes for the meeting here. We use the trix gem to generate a text editor for adding details to the meetings
 - The admin also has the ability to cancel the meeting session through this page
-![Meeting In List View](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Meeting_List_View.png)
+![Single_Meeting](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/Single_Meeting_View.png)
 
 - The meeting show page uses AJAX to update the comments in real time. When users submit a comment it is automatically displayed without having to refresh the page.
 ![Dynamic Meeting Update](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/AJAX%20Comments.gif)
@@ -59,6 +59,7 @@ App for freelancers and consultants streamline consultation sessions. Consulytic
 ![New Consulation Form](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/New_Session.png)
 - Client's can schedule a new meeting right from within the app
 - Creating a new meeting also sends an email to the client about the meeting they just scheduled at their registered email ID
+
 ![New Consulation Email](https://github.com/vedantshetty/Consulytics/blob/master/Readme-Assets/New_Session_Mail.png)
 
 
@@ -73,15 +74,15 @@ App for freelancers and consultants streamline consultation sessions. Consulytic
 1. cd to the directory you want to save the code
 2. run `git clone git@github.com:vedantshetty/Consulytics.git`
 3. cd to the project directory
-4. Make sure you have redis install
-  - run `redis-server` in the terminal
-  - If you don't have redis install then do so by using the [guide](http://tutorials.jumpstartlab.com/topics/performance/installing_redis.html)
+4. Make sure you have redis installed
+   - run `redis-server` in the terminal
+   - If you don't have redis install then do so by using the [guide](http://tutorials.jumpstartlab.com/topics/performance/installing_redis.html)
 5. run `gem install foreman`
-  - Make sure to not install foreman from the gem file
+   - Make sure to not install foreman from the gem file
 6. `bundle install`
 7. Setup Stripe Payments
-  - Get your public and secret key from stripe( [link to keys](https://dashboard.stripe.com/test/apikeys))
-  - Open the credentials file by typing
+   - Get your public and secret key from stripe( [link to keys](https://dashboard.stripe.com/test/apikeys))
+   - Open the credentials file by typing
 
 | Value In Code | Text Editor  |
 |---------------|--------------|
@@ -90,8 +91,8 @@ App for freelancers and consultants streamline consultation sessions. Consulytic
 | EDITOR='gedit --wait' bin/rails credentials:edit         | Gedit        |
 
 8 Paste the following in your credentials file
-  - stripe_publishable_key: <YOUR_KEY_HERE>
-  - stripe_secret_key: < YOUR_KEY_HERE>
+   - stripe_publishable_key: <YOUR_KEY_HERE>
+   - stripe_secret_key: < YOUR_KEY_HERE>
 
 9. `foreman start`
 
@@ -107,12 +108,12 @@ App for freelancers and consultants streamline consultation sessions. Consulytic
  8. [Trix](https://github.com/basecamp/trix) by Basecamp
  
  ## To-Do
- - Allow 'drag-dropping' files to meeting notes
+- Allow 'drag-dropping' files to meeting notes
 - Use a more intuitive date-time picker
 - Refactor CSS for tailwindCSS 1.0
--Integrate SendGrid
--Refactor UI
--Improve text on home page
+- Integrate SendGrid
+- Refactor UI
+- Improve text on home page
 
 
 ## Thanks
