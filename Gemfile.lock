@@ -118,6 +118,7 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.2)
     public_suffix (4.0.3)
     puma (4.3.1)
       nio4r (~> 2.0)
@@ -196,7 +197,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     stripe (4.24.0)
       faraday (~> 0.13)
       net-http-persistent (~> 3.0)
@@ -243,6 +243,7 @@ DEPENDENCIES
   friendly_id (~> 5.3)
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   redis (~> 4.0)
@@ -252,7 +253,6 @@ DEPENDENCIES
   simple_calendar (~> 2.3)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   stripe (~> 4.0, >= 4.0.2)
   trix (~> 0.9.9)
   turbolinks (~> 5)
