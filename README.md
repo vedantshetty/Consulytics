@@ -4,6 +4,8 @@
 
 App for freelancers and consultants streamline consultation sessions. Consulytics provides a portal for your clients to schedule and pay for consultation sessions
 
+Can be accessed at https://consulytics.herokuapp.com/
+
 ## Table of Contents
 - [Features](#features)
 - [Layout](#layout)
