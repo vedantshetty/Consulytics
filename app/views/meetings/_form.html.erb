@@ -35,8 +35,9 @@
     </div>
 
     <hr class='border m-2' />
-
-    <%= render "payment_form" %>
+    <% unless Rails.env.production? %>
+      <%= render "payment_form" %>
+    <% end %>
     <%= form.submit class:"btn btn-primary items-center text-base py-3 px-5" %>
 
   <% end %>
